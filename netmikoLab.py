@@ -12,3 +12,9 @@ device = {
 }
 
 c = ConnectHandler(**device)
+
+output = c.send_command('show run')
+
+f = open('netmiko_file.conf', 'x')
+f.write(output)
+f.close()
